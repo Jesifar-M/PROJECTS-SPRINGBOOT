@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Movie Website</title>
+</head>
+
+<body>
+
+    <h1 th:text="${movieTitle}"></h1>
+
+    <p th:text="${firstLine}"></p>
+
+    <div th:if="${loginStatus}">
+        <h3>Full Movie Description:</h3>
+        <p th:text="${movieDescription}"></p>
+    </div>
+
+    <div th:unless="${loginStatus}">
+        <p>Please log in to read the full movie description.</p>
+    </div>
+
+</body>
+
+</html>
