@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile List</title>
+</head>
+<body>
+
+<h1>Mobile Phone Details</h1>
+
+
+<h2>1. All Phone Names and Prices</h2>
+
+<table border="1">
+
+    <tr>
+        <th>Phone Name</th>
+        <th>Price</th>
+    </tr>
+
+    <tr th:each="mobile : ${namePrices}">
+        <td th:text="${mobile[0]}"></td>
+        <td th:text="${mobile[1]}"></td>
+    </tr>
+
+</table>
+
+
+<br><br>
+
+
+<h2>2. Phones Below ₹20,000</h2>
+
+<table border="1">
+
+    <tr>
+        <th>Phone Name</th>
+        <th>Brand</th>
+        <th>Price</th>
+        <th>Type</th>
+    </tr>
+
+    <tr th:each="mobile : ${below20000}">
+        <td th:text="${mobile.name}"></td>
+        <td th:text="${mobile.brand}"></td>
+        <td th:text="${mobile.price}"></td>
+        <td th:text="${mobile.type}"></td>
+    </tr>
+
+</table>
+
+
+<br><br>
+
+
+<h2>3. Total Number of Phones by Type</h2>
+
+<table border="1">
+
+    <tr>
+        <th>Type</th>
+        <th>Total Phones</th>
+    </tr>
+
+    <tr th:each="item : ${typeCount}">
+        <td th:text="${item[0]}"></td>
+        <td th:text="${item[1]}"></td>
+    </tr>
+
+</table>
+
+
+<br><br>
+
+<a href="/mobile">Add New Mobile</a>
+
+</body>
+</html>

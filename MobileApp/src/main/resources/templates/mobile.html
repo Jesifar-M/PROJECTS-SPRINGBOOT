@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Form</title>
+</head>
+<body>
+
+<h1>Add Mobile Phone</h1>
+
+<form action="/save-mobile" method="post">
+
+    <label>Phone Name:</label>
+    <input type="text" name="name" required>
+    <br><br>
+
+    <label>Brand:</label>
+    <input type="text" name="brand" required>
+    <br><br>
+
+    <label>Price:</label>
+    <input type="number" name="price" step="0.01" required>
+    <br><br>
+
+    <label>Type:</label>
+
+    <select name="type" required>
+        <option value="Android">Android</option>
+        <option value="iPhone">iPhone</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit">Save Mobile</button>
+
+</form>
+
+</body>
+</html>
