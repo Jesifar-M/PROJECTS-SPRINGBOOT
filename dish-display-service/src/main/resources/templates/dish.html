@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Featured Restaurant Dish</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fcf8f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .dish-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            border-top: 5px solid #d9534f;
+        }
+        h1 {
+            color: #333333;
+            margin-bottom: 10px;
+        }
+        .price {
+            font-size: 24px;
+            color: #d9534f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dish-card">
+        <!-- Renders the extracted dish name dynamically -->
+        <h1 th:text="${dishName}">Dish Name Placeholder</h1>
+        <p>Special Offer Price</p>
+        <!-- Renders the extracted price dynamically -->
+        <div class="price">$<span th:text="${dishPrice}">0.00</span></div>
+    </div>
+
+</body>
+</html>
