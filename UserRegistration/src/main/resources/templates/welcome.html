@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Welcome</title>
+
+</head>
+
+<body>
+
+    <h1>Welcome Page</h1>
+
+    <h2>
+        Welcome,
+        <span th:text="${fullName}"></span>!
+    </h2>
+
+    <p>
+        You have successfully logged in.
+    </p>
+
+    <a href="/logout">
+        Logout
+    </a>
+
+</body>
+
+</html>

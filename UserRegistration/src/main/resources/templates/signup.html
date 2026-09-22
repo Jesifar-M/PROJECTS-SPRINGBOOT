@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Sign Up</title>
+
+    <script>
+
+        function validatePassword() {
+
+            var password =
+                document.getElementById("password").value;
+
+            var confirmPassword =
+                document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+
+                alert("Password and Confirm Password do not match.");
+
+                return false;
+            }
+
+            return true;
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Sign Up</h1>
+
+    <p th:if="${error}"
+       th:text="${error}">
+    </p>
+
+    <form th:action="@{/signup}"
+          th:object="${user}"
+          method="post"
+          onsubmit="return validatePassword();">
+
+        <label>Email:</label>
+        <input type="email"
+               th:field="*{email}"
+               required>
+
+        <br><br>
+
+        <label>Password:</label>
+        <input type="password"
+               id="password"
+               th:field="*{password}"
+               required>
+
+        <br><br>
+
+        <label>Confirm Password:</label>
+        <input type="password"
+               id="confirmPassword"
+               required>
+
+        <br><br>
+
+        <label>Full Name:</label>
+        <input type="text"
+               th:field="*{fullName}"
+               required>
+
+        <br><br>
+
+        <label>Last Name:</label>
+        <input type="text"
+               th:field="*{lastName}"
+               required>
+
+        <br><br>
+
+        <label>Address:</label>
+        <textarea th:field="*{address}"
+                  required></textarea>
+
+        <br><br>
+
+        <button type="submit">
+            Sign Up
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/login">
+        Already have an account? Login
+    </a>
+
+</body>
+
+</html>
