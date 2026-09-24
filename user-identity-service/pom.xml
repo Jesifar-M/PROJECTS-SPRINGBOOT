@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://apache.org" xmlns:xsi="http://w3.org"
+	xsi:schemaLocation="http://apache.org https://apache.org">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.3.4</version>
+		<relativePath/>
+	</parent>
+	
+	<groupId>com.shop</groupId>
+	<artifactId>user-identity-service</artifactId>
+	<version>1.0.0</version>
+	<name>user-identity-service</name>
+	<description>Alternative User Registry REST Engine</description>
+	
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+	
+	<dependencies>
+		<!-- Dependencies List -->
+		<!-- 1. spring-boot-starter-web : Builds endpoints -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- 2. spring-boot-starter-data-jpa : Connects database handles -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<!-- 3. spring-boot-starter-security : Handles BCrypt crypto processes -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<!-- 4. h2 : In-memory transactional engine -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
