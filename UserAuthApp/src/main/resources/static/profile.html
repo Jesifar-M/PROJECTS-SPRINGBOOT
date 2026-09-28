@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+</head>
+
+<body>
+
+<h2>Protected Profile</h2>
+
+<button onclick="getProfile()">
+    Access Profile
+</button>
+
+<br><br>
+
+<button onclick="logout()">
+    Logout
+</button>
+
+<p id="message"></p>
+
+<script>
+
+function getProfile() {
+
+    const token =
+        localStorage.getItem("token");
+
+    fetch("/api/profile", {
+
+        method: "GET",
+
+        headers: {
+
+            "Authorization":
+                "Bearer " + token
+
+        }
+
+    })
+
+    .then(response => response.text())
+
+    .then(data => {
+
+        document.getElementById("message")
+            .innerText = data;
+
+    });
+
+}
+
+
+function logout() {
+
+    const token =
+        localStorage.getItem("token");
+
+    fetch("/api/logout", {
+
+        method: "POST",
+
+        headers: {
+
+            "Authorization":
+                "Bearer " + token
+
+        }
+
+    })
+
+    .then(response => response.text())
+
+    .then(data => {
+
+        localStorage.removeItem("token");
+
+        document.getElementById("message")
+            .innerText = data;
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
